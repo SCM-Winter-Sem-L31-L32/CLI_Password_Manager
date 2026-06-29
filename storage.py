@@ -33,7 +33,7 @@ def save_passwords(data):
 
 
 
-def add_password(site, password):
+def add_password(site, username, password):
 
     passwords = load_passwords()
 

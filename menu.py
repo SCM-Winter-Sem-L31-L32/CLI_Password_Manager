@@ -1,61 +1,10 @@
-<<<<<<< HEAD
-from storage import (
-=======
-[10:20 pm, 27/06/2026] Sharan: from auth import *
-from encryption import *
-from storage import *
-
-print("========== TESTING ==========")
-
-print("\nTesting Encryption")
-
-generate_key()
-
-password = "hello123"
-
-encrypted = encrypt_password(password)
-
-decrypted = decrypt_password(encrypted)
-
-if password == decrypted:
-    print("Encryption Test Passed")
-else:
-    print("Encryption Test Failed")
-
-
-print("\nTesting Storage")
-
-add_password("Instagram", encrypted.decode())
-
-view_passwords()
-
-delete_password("Instagram")
-
-print("Storage Test Completed")
-[10:31 pm, 27/06/2026] Sharan: from menu import display_menu
-
-if _name_ == "_main_":
-    display_menu()
-[10:35 pm, 27/06/2026] Sharan: from storage import (
->>>>>>> b410f88ddbd5cc4326be46ae99ecf77e066b5855
-    add_password,
-    view_passwords,
-    delete_password
-)
-
-from encryption import (
-    encrypt_password
-)
+from storage import add_password, view_passwords, delete_password
 
 
 def display_menu():
-
     while True:
-
-        print("\n===================")
-        print("CLI PASSWORD MANAGER")
-        print("===================")
-
+        print("\nCLI PASSWORD MANAGER")
+        print("====================")
         print("1. Add Password")
         print("2. View Passwords")
         print("3. Delete Password")
@@ -63,38 +12,23 @@ def display_menu():
 
         choice = input("Enter your choice: ")
 
-
         if choice == "1":
-
-            website = input("Enter website: ")
+            site = input("Enter site: ")
+            username = input("Enter username: ")
             password = input("Enter password: ")
 
-            encrypted = encrypt_password(password)
-
-            add_password(
-                website,
-                encrypted.decode()
-            )
-
+            add_password(site, username, password)
 
         elif choice == "2":
-
             view_passwords()
 
-
         elif choice == "3":
-
-            website = input("Enter website: ")
-
-            delete_password(website)
-
+            site = input("Enter site to delete: ")
+            delete_password(site)
 
         elif choice == "4":
-
-            print("Exiting...")
+            print("Exiting... Goodbye!")
             break
 
-
         else:
-
-            print("Invalid choice")
+            print("Invalid choice!")

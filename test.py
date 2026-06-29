@@ -45,7 +45,7 @@ else:
 
 print("\nTesting Storage")
 
-add_password("Instagram", encrypted.decode())
+add_password("Instagram", "nisha14", encrypted.decode())
 
 view_passwords()
 
